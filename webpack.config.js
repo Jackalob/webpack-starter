@@ -5,6 +5,7 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: "./src/index.js",
+  // devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "js/main.[chunkhash:8].js",
@@ -21,6 +22,13 @@ module.exports = {
         test: /\.css$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
+      {
+        test: /\.m?js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: "babel-loader",
+        },
+      },
     ],
   },
   plugins: [
@@ -28,7 +36,7 @@ module.exports = {
       template: "./index.html",
     }),
     new MiniCssExtractPlugin({
-      filename: "css/main.[chunkhash:8].css"
+      filename: "css/main.[chunkhash:8].css",
     }),
   ],
 };
