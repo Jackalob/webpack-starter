@@ -1,9 +1,13 @@
-div {
+#counter {
   width: 100px;
   height: 100px;
   border: 1px solid #333;
   background-color: #333;
-  color: white;
+  background-image: url("./anime.gif");
+  background-size: cover;
+  color: red;
+  font-size: 48px;
+  font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;

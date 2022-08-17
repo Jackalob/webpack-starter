@@ -21,4 +21,5 @@ class Person {
 }
 
 let lee = new Person("lee", 10);
-console.log(lee.words);
+
+console.log('private:', lee.words); 
